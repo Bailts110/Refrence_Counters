@@ -1,0 +1,62 @@
+[INFO] CMD: clang -Wall -Wextra -Wswitch-enum -ggdb -o main main.c
+[INFO] CMD: valgrind ./main
+==76385== Memcheck, a memory error detector
+==76385== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==76385== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==76385== Command: ./main
+==76385== 
+-------Expr---------
+[33m[RC]: 0x4ac7080 allocated
+[0m[33m[RC]: 0x4ac70f0 allocated
+[0m[33m[RC]: 0x4ac7160 allocated
+[0m[33m[RC]: 0x4ac71d0 allocated
+[0m[33m[RC]: 0x4ac7240 allocated
+[0m[32m[RC]: 0x4ac7160 re-acquired
+[0m[32m[RC]: 0x4ac71d0 re-acquired
+[0m[33m[RC]: 0x4ac72b0 allocated
+[0m[32m[RC]: 0x4ac70f0 re-acquired
+[0m[32m[RC]: 0x4ac7240 re-acquired
+[0m[33m[RC]: 0x4ac7320 allocated
+[0m[32m[RC]: 0x4ac7080 re-acquired
+[0m[32m[RC]: 0x4ac72b0 re-acquired
+[0m-------Eval---------
+[33m[RC]: 0x4ac7390 allocated
+[0m[32m[RC]: 0x4ac7160 re-acquired
+[0m[32m[RC]: 0x4ac70f0 re-acquired
+[0m[32m[RC]: 0x4ac7390 re-acquired
+[0m-------Dump Expression---------
+Expr = 
+PAIR(0):
+  SYMBOL(1): swap[32m 0x4ac7090
+[0m  PAIR(1):
+    INTEGER(2): 1[32m 0x4ac7100
+[0m    PAIR(1):
+      INTEGER(2): 2[32m 0x4ac7170
+[0m      NIL(1)[32m 0x4ac71e0
+[0mResult = 
+PAIR(1):
+  INTEGER(2): 2[32m 0x4ac7170
+[0m  INTEGER(2): 1[32m 0x4ac7100
+[0m-------Release Expression---------
+[31m[RC]: 0x4ac7080 released
+[0m[31m[RC]: 0x4ac71d0 released
+[0m[31m[RC]: 0x4ac7240 released
+[0m[31m[RC]: 0x4ac72b0 released
+[0m[31m[RC]: 0x4ac7320 released
+[0mResult = 
+PAIR(1):
+  INTEGER(1): 2[32m 0x4ac7170
+[0m  INTEGER(1): 1[32m 0x4ac7100
+[0m-------Release Result---------
+[31m[RC]: 0x4ac7160 released
+[0m[31m[RC]: 0x4ac70f0 released
+[0m[31m[RC]: 0x4ac7390 released
+[0m==76385== 
+==76385== HEAP SUMMARY:
+==76385==     in use at exit: 0 bytes in 0 blocks
+==76385==   total heap usage: 9 allocs, 9 frees, 4,416 bytes allocated
+==76385== 
+==76385== All heap blocks were freed -- no leaks are possible
+==76385== 
+==76385== For lists of detected and suppressed errors, rerun with: -s
+==76385== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

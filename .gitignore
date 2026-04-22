@@ -1,0 +1,11 @@
+horcrus/
+*~
+nob
+nob.old
+build/
+cmain.?*
+cmain
+main.rs
+*.md
+ideas
+main
