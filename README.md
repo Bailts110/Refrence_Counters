@@ -112,4 +112,5 @@ dump_expr(result); // Outputs: (2 1)
 
 ## 📜 License
 #### This project is open-source. Feel free to use and modify for educational purposes.
+#### The idea is inspired by TSDOING.
 ---
